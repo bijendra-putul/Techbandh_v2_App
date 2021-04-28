@@ -1,0 +1,188 @@
+.bggray {
+  background: #f0f1f2;
+}
+.codenot-find {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  margin-top: 20px;
+  position: relative;
+  h6 {
+    font-size: 14px;
+    margin-right: 10px;
+    margin: 0;
+    margin-right: 10px;
+  }
+  ion-button {
+    text-transform: capitalize;
+  }
+  .resendwait {  position: absolute;  
+    top: 35px;  font-size: 20px;  
+    display: flex;  
+    align-items: center; 
+     justify-content: center;}
+     .second-value {  display: flex;  
+      background: #5a43c8;  padding: 7px;  
+      border-radius: 40px;  color: #fff;  
+      width: 36px;  align-items: center; 
+       justify-content: center;  margin: 3px 14px;}
+}
+.phonenumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 15vh;
+  .welcome-text {
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 40px;
+  }
+
+  .verify-phone {
+    font-size: 16px;
+    color: #000;
+  }
+  .bg-height {
+    height: 7px;
+    width: 90px;
+    margin-top: 15px;
+  }
+}
+.phone-no {
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #472dc2;
+}
+.registerbutton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-right: 6px;
+
+  .register-btn {
+    font-size: 14px;
+    text-transform: capitalize;
+    border-radius: 40px;
+    height: 48px;
+    --box-shadow: none;
+    --background: none;
+    width: 100%;
+  }
+  .login-btn {
+    font-size: 14px;
+    text-transform: capitalize;
+    background-image: linear-gradient(#7d59e3, #472dc2);
+    border-radius: 40px;
+    height: 48px;
+    --box-shadow: none;
+    --background: none;
+    width: 100%;
+  }
+  .register-div {
+    width: 47%;
+  }
+  .login-div {
+    width: 63%;
+  }
+}
+
+.inputbox-border {
+  border-bottom: 2px solid #f0f1f2;
+  .item-native {
+    padding-inline-start: 0px !important;
+  }
+}
+.inputbox-border .sc-ion-input-md-h {
+  color: #cac6c6 !important;
+}
+
+.success {
+  color: green;
+}
+.errormob {
+  color: red;
+  position: absolute;
+  top: 70px;
+  font-size: 12px;
+}
+.enterotpcode {
+  text-align: center;
+  padding: 20px 20px;
+  top: 50px;
+  height: 100vh;
+  position: absolute;
+  z-index: 999;
+  h3 {
+    font-size: 18px;
+    color: #2a2b2b;
+    margin-top: 40px;
+  }
+  h4 {
+    font-size: 18px;
+    color: #472dc2;
+  }
+  .otp-box {
+    border: 1px solid #472dc2;
+    height: 30px;
+    width: 40px;
+    margin: 0 5px;
+    padding-left: 0 !important;
+    padding-right: 10px !important;
+  }
+  .code-enter-box {
+    display: flex;
+    margin: 20px 50px;
+    width: 250px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+}
+.mob-no {
+  top: 68px;
+  position: absolute;
+  color: red;
+  font-size: 14px;
+  background: #f0f1f2;
+  z-index: 999;
+  width: 100%;
+  height: 26px;
+}
+
+.enterotpsms {
+  font-size: 11.5px;
+  color: #676767;
+  position: absolute;
+  top: 71px;
+}
+
+.footer-nav {
+  display: none !important;
+}
+.inputbox-sms-otp {
+  ion-input {
+    border: 1px solid #9c9999;
+  }
+}
+.code-enter-box {
+  .native-input.sc-ion-input-md {
+    padding-left: 0 !important;
+  }
+}
+
+.input-box {
+  .native-input.sc-ion-input-md {
+    padding-left: 0 !important;
+  }
+}
+.native-input.sc-ion-input-md {
+  padding-left: 0 !important;
+}

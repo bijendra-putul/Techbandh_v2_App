@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar class="heading-padd">
+    <ion-buttons slot="secondary" (click)="searchlistModal()">
+      <ion-button>
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary" (click)="leadformPopover()">
+      <ion-button>
+        <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="heading-size">My Training</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="onclickcontact()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="padding:16px;">
+  <div *ngIf="videonum else loading">
+    <ion-card style="padding:10px;" *ngFor="let itemvideo of videonum">
+      <ion-row class="ion-align-items-center rowSection">
+        <h1
+          style="font-size: 18px;
+        padding-bottom: 10px;
+        color: #4a4a4a;"
+        >
+          {{itemvideo.title}}
+        </h1>
+        <iframe
+          width="100%"
+          height="200px"
+          [src]="sanitizer.bypassSecurityTrustResourceUrl(itemvideo.url)"
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+        ></iframe>
+      </ion-row>
+    </ion-card>
+    <ion-spinner
+      name="bubbles"
+      *ngIf="showProgress"
+      style="width: 50px;
+  position: absolute;
+  top: 27px;
+  left: 18px;"
+    ></ion-spinner>
+  </div>
+  <ng-template #loading>
+    <ion-spinner
+      name="crescent"
+      style="--color:#3880ff;
+              margin: 50px 0;
+              height: 50px;
+              width: 100%;"
+      class="spinner-data"
+    ></ion-spinner>
+  </ng-template>
+  <!-- <ion-card style="padding:10px;">
+    <ion-row class="ion-align-items-center rowSection">
+      <h1 style="font-size: 16px; padding-bottom:10px">Video heading</h1>
+      <iframe
+        width="100%"
+        height="200px"
+        src="https://www.youtube.com/embed/6kqe2ICmTxc"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+      ></iframe>
+    </ion-row>
+  </ion-card>
+  <ion-card style="padding:10px;">
+    <ion-row class="ion-align-items-center rowSection">
+      <h1 style="font-size: 16px; padding-bottom:10px">Video heading</h1>
+      <iframe
+        width="100%"
+        height="200px"
+        src="https://www.youtube.com/embed/6kqe2ICmTxc"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+      ></iframe>
+    </ion-row>
+  </ion-card> -->
+</ion-content>

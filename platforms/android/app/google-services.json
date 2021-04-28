@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "270640982577",
+    "firebase_url": "https://tech-bandhu.firebaseio.com",
+    "project_id": "tech-bandhu",
+    "storage_bucket": "tech-bandhu.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:270640982577:android:b41153e01d89adedae4310",
+        "android_client_info": {
+          "package_name": "com.tech.bandhu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "270640982577-d3buda49lrejihsp2cdmo8f2nqt1fjjs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tech.bandhu",
+            "certificate_hash": "d14368c5bdc498e911f8e3b3a76539a5be69e727"
+          }
+        },
+        {
+          "client_id": "270640982577-rd3k7p9ks63bnkd10k7lk6hdl830l9rt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqLqqX4gOREPLsDHcdgTCNMaNX5EGRp78"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "270640982577-rd3k7p9ks63bnkd10k7lk6hdl830l9rt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

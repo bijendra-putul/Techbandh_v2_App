@@ -1,0 +1,169 @@
+<ion-content>
+  <ion-header>
+    <ion-toolbar class="heading-padd">
+      <ion-title class="heading-size">Add a Lead</ion-title>
+      <ion-buttons slot="start">
+        <ion-button (click)="close()">
+          <ion-icon slot="icon-only" name="close"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card class="lead-form ion-no-padding ion-no-margin">
+    <ion-progress-bar
+      type="indeterminate"
+      reversed="true"
+      *ngIf="showProgress"
+    ></ion-progress-bar>
+    <form [formGroup]="formgroup" (ngSubmit)="addlead()">
+      <ion-list>
+        <ion-item no-padding>
+          <ion-label position="floating">Client Name </ion-label>
+          <ion-input
+            class="form-control"
+            type="text"
+            formControlName="customer_name"
+            color="primary"
+          >
+          </ion-input>
+          <div
+            *ngIf="customer_name.hasError('required') && customer_name.touched"
+            style="
+            color: red;
+            position: absolute;
+            font-size: 12px;
+            right: -16px;
+            bottom: -5px;"
+            padding
+          >
+            Name is required.
+          </div>
+        </ion-item>
+        <ion-item no-padding>
+          <ion-label position="floating">Email </ion-label>
+          <ion-input
+            class="form-control"
+            type="text"
+            formControlName="customer_email"
+            color="primary"
+          >
+          </ion-input>
+          <div
+            *ngIf="customer_email.hasError('required') && customer_email.touched"
+            style="
+            color: red;
+            position: absolute;
+            font-size: 12px;
+            right: -16px;
+            bottom: -5px;"
+            padding
+          >
+            Email is required.
+          </div>
+        </ion-item>
+        <ion-item no-padding>
+          <ion-label position="floating">Phone Number</ion-label>
+          <ion-input
+            type="tel"
+            class="form-control"
+            formControlName="customer_phone"
+            color="primary"
+            maxLength="10"
+            minLength="10"
+          >
+          </ion-input>
+          <div
+            *ngIf="
+              customer_phone.hasError('required') && customer_phone.touched
+            "
+            style="
+          color: red;
+          position: absolute;
+          font-size: 12px;
+          right: -16px;
+          bottom: -5px;"
+            padding
+          >
+            Mobile Number is required.
+          </div>
+          <div
+            *ngIf="
+              !customer_phone.hasError('required') &&
+              customer_phone.hasError('pattern') &&
+              customer_phone.touched
+            "
+            style="
+           color: red;
+           position: absolute;
+           font-size: 12px;
+           right: -16px;
+           bottom: -5px;"
+            padding
+          >
+            Please enter valid number.
+          </div>
+        </ion-item>
+        <ion-item no-padding>
+          <ion-label position="floating">Search for product</ion-label>
+          <ion-input
+            class="form-control"
+            type="text"
+            formControlName="customer_product"
+            [(ngModel)]="leadData.customer_product"
+            color="primary"
+            (click)="selectProduct();"
+          >
+          </ion-input>
+        </ion-item>
+        
+                
+          <ion-item no-padding class="clienttype">          
+          <ion-label position="floating">Lead Type</ion-label>        
+          <ion-select formControlName="client_type" placeholder="Select One">n            
+          <ion-select-option value="Govt">Government Client 
+                     </ion-select-option>           
+                      <ion-select-option value="Non-Govt">Non-Government Client
+                      </ion-select-option> 
+                    </ion-select>
+                    </ion-item>
+                    <ion-item no-padding>
+                      <ion-label position="floating">Requirements</ion-label>
+                      <ion-input
+                        class="form-control"
+                        type="text"
+                        formControlName="customer_requirement"
+                        color="primary"
+                      >
+                      </ion-input>
+                      <div
+                        *ngIf="
+                          customer_requirement.hasError('required') &&
+                          customer_requirement.touched
+                        "
+                        style="
+                      color: red;
+                      position: absolute;
+                      font-size: 12px;
+                      right: -16px;
+                      bottom: -5px;"
+                        padding
+                      >
+                        Requirement is required.
+                      </div>
+                    </ion-item>
+                    
+        <div color="phonenumber" class="leadformbutton">
+          <ion-button
+            shape="round"
+            size="large"
+            class="leadform"
+            [disabled]="!formgroup.valid"
+            (click)="addlead()"
+          >
+            Submit
+          </ion-button>
+        </div>
+      </ion-list>
+    </form>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,122 @@
+<ion-content class="myaccountDiv">
+  <!-- <ion-progress-bar
+    type="indeterminate"
+    reversed="true"
+    *ngIf="showProgress"
+  ></ion-progress-bar> -->
+  <ion-card
+    class="ion-no-padding ion-no-margin button-shadow-none blue-background"
+  >
+    <ion-button (click)="goBack()" class="searchback">
+      <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+    </ion-button>
+    <ion-img src="../../assets/images/group_profile.png"></ion-img>
+    <div class="edit-image">
+      <img
+        src="{{contactDetail.image}}"
+        onError="this.src='../../assets/images/female.png'"
+      /><ion-spinner
+        name="bubbles"
+        *ngIf="showProgress"
+        style="width: 50px;
+      position: absolute;
+      top: 27px;
+      left: 18px;"
+      ></ion-spinner>
+      <ion-icon name="add" class="edit-plus" (click)="selectImage()"></ion-icon>
+    </div>
+    <!-- <ion-list class="edit-position" text-wrap>
+      <ion-item style="--background: none;" lines="none">
+        <div class="divthubnail" slot="start" lines="none">
+          <img lines="none" [src]="contactDetail.image" style=" position: absolute; width:
+          88px; height: 85px; border-radius: 83px; left: 40px; border: 0;object-fit: cover;"
+            onError="this.src='../../assets/images/female.png'" />
+        </div>
+      </ion-item>
+    </ion-list> -->
+  </ion-card>
+
+  <ion-card
+    class="ion-no-padding ion-no-margin button-shadow-none myprofile-form "
+  >
+    <ion-spinner
+      name="bubbles"
+      *ngIf="showProgress"
+      style="position: absolute;
+      left: 0;
+      right: 0;
+      z-index: 9999999;
+      color: #000;
+      margin: 0 auto;
+      width: 50px;
+      height: 50px;
+      top: 82px;"
+    ></ion-spinner>
+    <form [formGroup]="userForm" (ngSubmit)="savebtn()">
+      <ion-list>
+        <ion-item no-padding>
+          <ion-label position="floating" ngMo>Phone</ion-label>
+          <p style="color: #8c8989;">{{ contactDetail.phone }}</p>
+        </ion-item>
+        <ion-item no-padding>
+          <ion-label position="floating" ngMo>First Name</ion-label>
+          <ion-input
+            formControlName="first_name"
+            [(ngModel)]="contactDetail.first_name"
+          ></ion-input>
+          <div
+            class="contact-us-error"
+            *ngIf="userForm.hasError('required', 'first_name') && userForm.touched"
+          >
+            First Name is required.
+          </div>
+        </ion-item>
+        <ion-item no-padding>
+          <ion-label position="floating" ngMo>Last Name</ion-label>
+          <ion-input
+            formControlName="last_name"
+            [(ngModel)]="contactDetail.last_name"
+          ></ion-input>
+          <div
+            class="contact-us-error"
+            *ngIf="userForm.hasError('required', 'last_name') && userForm.touched"
+          >
+            Last name is required.
+          </div>
+        </ion-item>
+        <ion-item no-padding>
+          <ion-label position="floating">Email </ion-label>
+          <ion-input
+            formControlName="email"
+            [(ngModel)]="contactDetail.email"
+          ></ion-input>
+          <div
+            class="contact-us-error"
+            *ngIf="userForm.hasError('required', 'email') && userForm.touched"
+          >
+            Email is required
+          </div>
+          <div
+            class="contact-us-error"
+            *ngIf="
+              !userForm.hasError('required', 'email') &&
+              userForm.hasError('pattern', 'email')  && userForm.touched
+            "
+          >
+            Email is required
+          </div>
+        </ion-item>
+        <div color="phonenumber" class="leadformbutton ">
+          <ion-button
+            shape="round"
+            size="large"
+            class="leadform"
+            [disabled]="userForm.invalid"
+            (click)="savebtn()"
+            >Save
+          </ion-button>
+        </div>
+      </ion-list>
+    </form>
+  </ion-card>
+</ion-content>

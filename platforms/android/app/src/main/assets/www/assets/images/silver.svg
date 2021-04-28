@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>silver</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#EEEEEE" offset="0%"></stop>
+            <stop stop-color="#9ED5ED" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="silver" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-2" transform="translate(2.000000, -0.000000)" fill-rule="nonzero">
+            <g id="gold-medal" transform="translate(0.520000, 0.529781)">
+                <polygon id="Path" fill="#FF8B53" points="7.05049732 12.6234483 0.731770478 24.2687051 6.46973531 23.7501549 9.24689944 28.6896552 15.5656263 17.0443984"></polygon>
+                <g id="Group" transform="translate(9.615783, 12.623448)" fill="#FB641B">
+                    <polygon id="Path" points="8.69219146 0.0136921626 15.0311792 11.6387799 9.27481567 11.1211278 6.48874663 16.0520731 0.149758932 4.42698534"></polygon>
+                </g>
+                <ellipse id="Oval" stroke="#FFFFFF" fill="url(#linearGradient-1)" cx="12.1424288" cy="10.3282759" rx="9.76959248" ry="9.82827586"></ellipse>
+            </g>
+        </g>
+    </g>
+</svg>

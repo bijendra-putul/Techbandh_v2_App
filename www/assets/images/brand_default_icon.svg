@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-brand_default_icon">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="brand_default_icon" clip-path="url(#clip-brand_default_icon)">
+    <g id="noun_brand_2176540" transform="translate(-25.526 -5.988)">
+      <g id="Group_290" data-name="Group 290" transform="translate(29.526 6.988)">
+        <path id="Path_677" data-name="Path 677" d="M22.8,973.569v7.639l4.77-2.915,4.77,2.917v-7.639a8.184,8.184,0,0,1-9.541,0Z" transform="translate(-19.773 -959.21)" fill="#fff"/>
+        <path id="Path_678" data-name="Path 678" d="M27.6,959.35a7.691,7.691,0,1,0,7.7,7.687A7.685,7.685,0,0,0,27.6,959.35Zm0,3.364,1.518,2.813,3.029.439-2.381,2.157.647,3.244-2.813-1.51-2.813,1.51.647-3.244-2.381-2.157,3.029-.439,1.518-2.813Z" transform="translate(-19.906 -959.35)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

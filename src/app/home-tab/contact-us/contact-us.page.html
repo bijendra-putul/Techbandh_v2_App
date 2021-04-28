@@ -1,0 +1,174 @@
+<ion-header>
+  <ion-toolbar class="heading-padd">
+    <ion-buttons slot="secondary" (click)="searchlistModal()">
+      <ion-button>
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary" (click)="leadformPopover()">
+      <ion-button>
+        <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="heading-size">Contact Us </ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="onclickcontact()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="--background:#f5f5f5">
+  <ion-card class="callus-btn paddlr" style="margin-top:10px;">
+    <img src="../../assets/images/call-us.png" style="height: 160px;" />
+    <ion-text class="ioncimg-badge"
+      ><img src="../../../assets/images/account-manager-badge.svg"
+    /></ion-text>
+    <ion-card-content
+      class="acount-name"
+      color="phonenumber"
+      style="background-color: rgba(45, 15, 183, 0.77)"
+    >
+      <p class="profile-description">
+        <img src="../../assets/images/test/amit.png" />
+      </p>
+      <h2 style="padding-left: 15px;">
+        Hello!<br />
+        I am Amit, your Tech Bandhu Relationship Manager (TRM).<br />
+        Reach out to me for your queries on how to earn more.<br />
+        <button color="phonenumber" class="callusnow">
+          <a href="tel:08047188441">Contact me</a>
+        </button>
+      </h2>
+    </ion-card-content>
+  </ion-card>
+  <ion-progress-bar
+    type="indeterminate"
+    reversed="true"
+    *ngIf="showProgress"
+  ></ion-progress-bar>
+  <ion-card *ngIf="contactsusses" class="contactusvalidation">
+    <div
+      *ngIf="this.requstRespon && this.requstRespon.status == true"
+      style="text-align: center;
+      color: #000;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 20px;"
+    >
+      {{ contactusSuccessmessage }}
+      <div
+        style="margin-top: 40px;
+      text-align: center;
+      width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  "
+      >
+        <img
+          src="../../../assets/images/contact_app_images.png"
+          style="
+          height: auto;
+          width: auto;"
+        />
+      </div>
+    </div>
+  </ion-card>
+  <ion-card class="contact-detail paddlr">
+    <form [formGroup]="contactuserForm" (ngSubmit)="regForm()">
+      <ion-list>
+        <ion-item no-padding>
+          <ion-label position="floating">Name</ion-label>
+          <ion-input
+            type="text"
+            formControlName="name"
+            [(ngModel)]="requestData.name"
+          ></ion-input>
+          <div
+            class="contact-us-error"
+            *ngIf="contactuserForm.hasError('required', 'name') &&
+            contactuserForm.touched"
+          >
+            Name is required
+          </div>
+        </ion-item>
+        <ion-item no-padding>
+          <ion-label position="floating">Email </ion-label>
+          <ion-input
+            type="email"
+            formControlName="email"
+            [(ngModel)]="requestData.email"
+          ></ion-input>
+          <div
+            class="contact-us-error"
+            *ngIf="contactuserForm.hasError('required', 'email') &&
+            contactuserForm.touched"
+          >
+            Email is required
+          </div>
+          <div
+            class="contact-us-error"
+            *ngIf="!contactuserForm.hasError('required', 'email') && contactuserForm.hasError('pattern', 'email') "
+          >
+            Enter valid is email
+          </div>
+        </ion-item>
+        <ion-item no-padding>
+          <ion-label position="floating">Phone Number</ion-label>
+          <ion-input
+            type="tel"
+            formControlName="contact_number"
+            [(ngModel)]="requestData.contact_number"
+            minlength="10"
+            maxlength="10"
+            [pattern]="mobNumberPattern"
+          ></ion-input>
+          <div
+            class="contact-us-error"
+            *ngIf="contactuserForm.hasError('required', 'contact_number') &&
+            contactuserForm.touched"
+          >
+            Phone number is required
+          </div>
+          <div
+            class="contact-us-error"
+            *ngIf="!contactuserForm.hasError('required', 'contact_number') && contactuserForm.hasError('pattern', 'contact_number')"
+          >
+            Enter valid phone number
+          </div>
+        </ion-item>
+        <div color="phonenumber" class="registerbutton ">
+          <ion-button
+            shape="round"
+            size="large"
+            class="register-btn contact-us"
+            (click)="regForm()"
+            [disabled]="!contactuserForm.valid"
+            >Request a Call Back</ion-button
+          >
+        </div>
+      </ion-list>
+      <ng-template #showfile>
+        <div
+          class="contact_us_shortly"
+          style="background: #f0f1f2;"
+          color="primery"
+        >
+          <ion-grid class="contact_us_shortly_inner">
+            <ion-row>
+              <p class="contact_us_relex">
+                Thank you! We will call you back shortly
+              </p>
+              <img
+                src="../../../assets/images/contact_app_images.png"
+                class="img-responsive"
+              />
+            </ion-row>
+          </ion-grid>
+        </div>
+      </ng-template>
+    </form>
+  </ion-card>
+</ion-content>

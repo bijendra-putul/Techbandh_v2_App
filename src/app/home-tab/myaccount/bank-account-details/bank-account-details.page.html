@@ -1,0 +1,212 @@
+<ion-header>
+  <ion-toolbar class="heading-padd">
+    <ion-buttons slot="secondary" (click)="searchlistModal()">
+      <ion-button>
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary" (click)="leadformPopover()">
+      <ion-button>
+        <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="heading-size">Bank Account Details </ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content
+  class="accounts_card_num"
+  style="background: #f0f1f2;"
+  color="primery"
+>
+  <form [formGroup]="bankuserfrom">
+    <ion-card class="callus-btn paddlr">
+      <img src="../../assets/images/call-us.png" style="height: 178px;" />
+      <ion-card-content
+        class="acount-name  acount-name-b"
+        color="phonenumber"
+        style="background-color: rgba(45, 15, 183, 0.77)"
+      >
+        <ion-text class="account-no"
+          >Account Number
+          <ion-input
+            formControlName="acc_num"
+            placeholder="xxxx-0000-0000-xxxx"
+            [(ngModel)]="contactDetail.acc_num"
+            style=" margin-left: -10px;"
+          >
+          </ion-input>
+        </ion-text>
+        <!-- <ion-text class="edit">Edit</ion-text> -->
+      </ion-card-content>
+    </ion-card>
+    <!-- <div *ngIf="edited">
+      <div
+        *ngIf="this.updatedata && this.updatedata.status == true"
+        style="text-align: center;
+    color:#0b8a0b;
+    font-size: 14px;
+    font-weight: bold;"
+      >
+        {{ successmessage }}
+      </div>
+    </div> -->
+
+    <div *ngIf="edited">   
+     <div
+      *ngIf="this.updatedata && this.updatedata.status == true"
+       class="toast-wrapper toast-bottom"        
+      style="text-align: center;
+       color: #fff;
+        font-size: 14px;
+         font-weight: bold;
+               background-color: #000000e0;        
+               position: absolute;       
+               bottom: 10px;
+               width: 96%;         
+               z-index: 999;
+               margin: 0 auto;
+               padding: 15px 20px; 
+               margin-left: 7px;
+               border-radius: 5px;
+               background: #333;  --border-radius: 4px;--box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2),
+               0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);">       
+                {{ successmessage }}     
+       </div>
+         </div>
+
+
+
+    <ion-grid class="accounts_card_num_inner">
+      <ion-row>
+        <ion-col class="accounts_card_serail">
+          <ion-row class="accounts_border_bt">
+            <ion-col size="6" class="name_mahindrea">
+              <p>
+                <ion-col size="6" class="name_padding_space_bt"
+                  >Bank Name
+                </ion-col>
+              </p>
+            </ion-col>
+            <ion-col size="6" class="bank_profile">
+              <p>
+                <span>
+                  <ion-input
+                    formControlName="bank_name"
+                    placeholder="Enter Bank Name"
+                    class="no-padd no-margin"
+                    [(ngModel)]="contactDetail.bank_name"
+                  ></ion-input>
+                </span>
+              </p>
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="accounts_border_bt">
+            <ion-col size="6" class="name_mahindrea">
+              <p>
+                <ion-col size="6" class="name_padding_space_bt">
+                  Account Number
+                </ion-col>
+              </p>
+            </ion-col>
+            <ion-col size="6" class="bank_profile">
+              <p>
+                <span>
+                  <ion-input
+                    formControlName="acc_num"
+                    placeholder="xxxxxxxxxx"
+                    [(ngModel)]="contactDetail.acc_num"
+                    maxLength="16"
+                  ></ion-input>
+                </span>
+              </p>
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="accounts_border_bt">
+            <ion-col size="6" class="name_mahindrea">
+              <p>
+                <ion-col size="6" class="name_padding_space_bt">
+                  IFSC-Code
+                </ion-col>
+              </p>
+            </ion-col>
+            <ion-col size="6" class="bank_profile">
+              <p>
+                <span>
+                  <ion-input
+                    formControlName="ifsc_code"
+                    placeholder="SBIN0020979"
+                    [(ngModel)]="contactDetail.ifsc_code"
+                    maxLength="12"
+                  ></ion-input>
+                </span>
+              </p>
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="accounts_border_bt">
+            <ion-col size="6" class="name_mahindrea">
+              <p>
+                <ion-col size="6" class="name_padding_space_bt">
+                  Account Holder Name
+                </ion-col>
+              </p>
+            </ion-col>
+            <ion-col size="6" class="bank_profile">
+              <p>
+                <span>
+                  <ion-input
+                    formControlName="acc_holder_name"
+                    placeholder="Ex. Abcd"
+                    [(ngModel)]="contactDetail.acc_holder_name"
+                  ></ion-input>
+                </span>
+              </p>
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="accounts_border_bt">
+            <ion-col size="6" class="name_mahindrea">
+              <p>
+                <ion-col size="6" class="name_padding_space_bt">
+                  Branch Name
+                </ion-col>
+              </p>
+            </ion-col>
+            <ion-col size="6" class="bank_profile">
+              <p>
+                <span>
+                  <ion-input
+                    formControlName="branch_name"
+                    placeholder="Ex. Abcd"
+                    [(ngModel)]="contactDetail.branch_name"
+                  >
+                  </ion-input>
+                </span>
+              </p>
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="accounts_border_bt">
+            <ion-col size="12" class="name_mahindrea">
+              <ion-button
+                style="width: 100%;
+              padding: -10px;
+              height: 42px;"
+                (click)="savebtn()"
+                >save</ion-button
+              >
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
